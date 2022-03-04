@@ -1,0 +1,19 @@
+1 sex ratio
+2 no of male 
+3 no of female
+4 no of prepared students
+5 no pf unuprepared students
+6 highest marks
+7 highest marks by male
+8 highest marks by female
+9 average in maths
+10 average in reading
+11 average in writing
+12 average of prepared students
+13 average of unprepared students
+14 no of aspirants with high school degree
+15 no of aspirants with bachelor degree
+16 no of aspirants with master degree
+17 graph between groups
+18 graph between differnt degrees
+19 graph of male and female in diff subjects
