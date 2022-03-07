@@ -1,4 +1,4 @@
-import mysql.connector as mc
-dbc = mc.connect(host="localhost",user="root",passwd="Abhi@mysql1234",database="Student_data")
+import mysql.connector as con
+dbc = con.connect(host="localhost",user="root",passwd="root",database="Student_data")
 cursor=dbc.cursor()
 
