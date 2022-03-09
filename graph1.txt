@@ -1,0 +1,19 @@
+import matplotlib.pyplot as plt
+marks=range(1,100) #marks 
+gen=list(df.gender))
+mathscore=list(df.math_scores)
+readscore=list(df.reading_scores)
+writingscore=list(df.writing_scores)
+for i in gen:
+    if("male"==i):
+        c1=c1+1 #c1 is the count of males
+    else:
+        c2=c2+1 #c2 is the count of females
+mm1=df[df['gender']=='male'].math_marks.max() #male highest math marks
+mm2=df[df['gender']=='female'].math_marks.max() #female highest math marks      
+mr1=df[df['gender']=='male'].math_marks.max() #male highest read marks
+mr2=df[df['gender']=='female'].math_marks.max() #female highest read marks
+mw1=df[df['gender']=='male'].math_marks.max() #male highest writing marks
+mw2=df[df['gender']=='female'].math_marks.max() #male highest writing marks
+plt.bar(["Male"],[mm1,mr1,mw1],widht=0.50)
+plt.bar(["Female"],[mm2,mr2,mw2],widht=0.50)
