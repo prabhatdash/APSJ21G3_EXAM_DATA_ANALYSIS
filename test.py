@@ -1,5 +1,5 @@
 import pandas as pd
-
+import matplotlib as plt
 df=pd.read_csv('dataset.csv',engine="python")
 # math=list(df.math_score)
 # writing=list(df.writing_score)
@@ -50,15 +50,37 @@ df=pd.read_csv('dataset.csv',engine="python")
 #             else:
 #                 avgf=avgf.append(avg)
 
-math = list(df.math_score)
-writing = list(df.writing_score)
-reading = list(df.reading_score)
-sum = []
-for (i, j, k) in zip(math, writing, reading):
-    sum_ = (i + j + k)
-    sum.append(sum_)
-print("THE HIGHEST SCORE BY A STUDENT IS :- ",max(sum),"\nTHE LOWEST SCORE BY A STUDENT IS  :- ",min(sum))
+# math = list(df.math_score)
+# writing = list(df.writing_score)
+# reading = list(df.reading_score)
+# sum = []
+# for (i, j, k) in zip(math, writing, reading):
+#     sum_ = (i + j + k)
+#     sum.append(sum_)
+# print("THE HIGHEST SCORE BY A STUDENT IS :- ",max(sum),"\nTHE LOWEST SCORE BY A STUDENT IS  :- ",min(sum))
 
+gen=list(df.gender)
+mathscore=list(df.math_scores)
+readscore=list(df.reading_scores)
+writingscore=list(df.writing_scores)
+for i in gen:
+    if("male"==i):
+        c1=c1+1 #c1 is the count of males
+    else:
+        c2=c2+1 #c2 is the count of females
+x=np.arange(4)
+mm1=df[df['gender']=='male'].mathscore.max() #male highest math marks
+mm2=df[df['gender']=='female'].mathscore.max() #female highest math marks      
+mr1=df[df['gender']=='male'].readscore.max() #male highest read marks
+mr2=df[df['gender']=='female'].readscore.max() #female highest read marks
+mw1=df[df['gender']=='male'].writingscore.max() #male highest writing marks
+mw2=df[df['gender']=='female'].writingscore.max() #female highest writing marks
+plt.bar(x,[mm1,mr1,mw1],widht=0.25,color='r',label='Male')
+plt.bar(x+0.50,[mm2,mr2,mw2],widht=0.25,color='b',label='Female')
+plt.ylabel("Highest Marks")
+plt.xlabel("Gender")
+plt.legend(loc=2)
+plt.title("Highest marks across different genders")
 
 
 
