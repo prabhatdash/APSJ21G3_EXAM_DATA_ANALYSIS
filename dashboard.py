@@ -9,6 +9,7 @@ def dashboard():
     print("ENTER 6 TO GET THE TABULAR DISPLAY OF AVERAGE SCORES BY MALE AND FEMALE")
     print("ENTER 7 TO GET THE LINE GRAPH COMPARING THE HIGHEST MARKS ACROSS ALL SUBJECTS")
     print("ENTER 8 TO GET THE BAR CHART COMPARING HIGHEST MARKS ACROSS DIFFERENT GENDERS")
+    print("ENTER 9 TO GET BAR GRAPH COMPARING AVERAGE MARKS ACROSS ALL SUBJECTS")
     inp=int(input())
     if inp==1:
         functions.sexratio()
@@ -26,5 +27,7 @@ def dashboard():
         functions.linecompare()
     elif inp==8:
         functions.highlowgraph()
+    elif inp==9:
+        functions.avg_marksgraph()
 
 

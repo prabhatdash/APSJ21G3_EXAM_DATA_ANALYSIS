@@ -61,23 +61,32 @@ df=pd.read_csv('dataset.csv',engine="python")
 #     sum.append(sum_)
 # print("THE HIGHEST SCORE BY A STUDENT IS :- ",max(sum),"\nTHE LOWEST SCORE BY A STUDENT IS  :- ",min(sum))
 
-gen=list(df.gender)
+# gen=list(df.gender)
+# mathscore=list(df.math_score)
+# readscore=list(df.reading_score)
+# writingscore=list(df.writing_score)
+# c1=0
+# c2=0
+# for i in gen:
+#     if(i=="male"):
+#         c1=c1+1 #c1 is the count of males
+#     else:
+#         c2=c2+1 #c2 is the count of females
+# mm1=df[df['gender']=='male'].math_score.max() #male highest math marks
+# mm2=df[df['gender']=='female'].math_score.max() #female highest math marks      
+# mr1=df[df['gender']=='male'].reading_score.max() #male highest read marks
+# mr2=df[df['gender']=='female'].reading_score.max() #female highest read marks
+# mw1=df[df['gender']=='male'].writing_score.max() #male highest writing marks
+# mw2=df[df['gender']=='female'].writing_score.max() #female highest writing marks
+# s1=sum(mathscore)/(len(mathscore))
+# s2=sum(readscore)/(len(readscore))
+# s3=sum(writingscore)/len(writingscore)
+# plt.bar(["Maths","Reading","Writing"],[s1,s2,s3],color=['b','g','r'],width=0.50)
+# plt.title("Average marks across all subjects")
+# plt.show()
 mathscore=list(df.math_score)
 readscore=list(df.reading_score)
 writingscore=list(df.writing_score)
-c1=0
-c2=0
-for i in gen:
-    if(i=="male"):
-        c1=c1+1 #c1 is the count of males
-    else:
-        c2=c2+1 #c2 is the count of females
-mm1=df[df['gender']=='male'].math_score.max() #male highest math marks
-mm2=df[df['gender']=='female'].math_score.max() #female highest math marks      
-mr1=df[df['gender']=='male'].reading_score.max() #male highest read marks
-mr2=df[df['gender']=='female'].reading_score.max() #female highest read marks
-mw1=df[df['gender']=='male'].writing_score.max() #male highest writing marks
-mw2=df[df['gender']=='female'].writing_score.max() #female highest writing marks
 s1=sum(mathscore)/(len(mathscore))
 s2=sum(readscore)/(len(readscore))
 s3=sum(writingscore)/len(writingscore)
