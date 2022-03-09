@@ -1,6 +1,6 @@
 import pandas as pd
-# import numpy as np
-# import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.pyplot as plt
 df=pd.read_csv('dataset.csv',engine="python")
 def sexratio():
     m = 0
@@ -63,8 +63,6 @@ def highestlowestscore():
         sum_ = (i + j + k)
         sum.append(sum_)
     print("THE HIGHEST SCORE BY A STUDENT IS :- ", max(sum), "\nTHE LOWEST SCORE BY A STUDENT IS  :- ", min(sum))
-
-
 def tabularavgscores():
     male = df[df['gender'] == 'male']
     math_male = male['math_score']
@@ -98,3 +96,50 @@ def tabularavgscores():
     print(
         'THE TABULAR DISPLAY OF THE AVERAGE SCORES IN DIFFERENT SUBJECTS BY MALE AND FEMALE STUDENTS IS GIVEN BELOW:-\n')
     print(avg_df)
+def linecompare():
+    gen=list(df.gender)
+    mathscore=list(df.math_score)
+    readscore=list(df.reading_score)
+    writingscore=list(df.writing_score)
+    c1=0
+    c2=0
+    for i in gen:
+        if(i=="male"):
+            c1=c1+1 #c1 is the count of males
+        else:
+            c2=c2+1 #c2 is the count of females
+    mm1=df[df['gender']=='male'].math_score.max() #male highest math marks
+    mm2=df[df['gender']=='female'].math_score.max() #female highest math marks      
+    mr1=df[df['gender']=='male'].reading_score.max() #male highest read marks
+    mr2=df[df['gender']=='female'].reading_score.max() #female highest read marks
+    mw1=df[df['gender']=='male'].writing_score.max() #male highest writing marks
+    mw2=df[df['gender']=='female'].writing_score.max() #female highest writing marks
+    plt.plot(["Math","Reading","Writing"],[max(mm1,mm2),max(mr1,mr2),max(mw1,mw2)],'mo',markeredgecolor='k',linestyle='solid')
+    plt.show()
+def highlowgraph():
+    gen=list(df.gender)
+    mathscore=list(df.math_score)
+    readscore=list(df.reading_score)
+    writingscore=list(df.writing_score)
+    c1=0
+    c2=0
+    for i in gen:
+        if("male"==i):
+            c1=c1+1 #c1 is the count of males
+        else:
+            c2=c2+1 #c2 is the count of females
+    x=np.arange(1,4)
+    mm1=df[df['gender']=='male'].math_score.max() #male highest math marks
+    mm2=df[df['gender']=='female'].math_score.max() #female highest math marks      
+    mr1=df[df['gender']=='male'].reading_score.max() #male highest read marks
+    mr2=df[df['gender']=='female'].reading_score.max() #female highest read marks
+    mw1=df[df['gender']=='male'].writing_score.max() #male highest writing marks
+    mw2=df[df['gender']=='female'].writing_score.max() #female highest writing marks
+    plt.bar(x,[mm1,mr1,mw1],width=0.25,color='r',label='Male')
+    plt.bar(x+0.25,[mm2,mr2,mw2],width=0.25,color='b',label='Female')
+    plt.ylabel("Highest Marks")
+    plt.xlabel("Gender")
+    plt.legend(loc=2)
+    plt.title("Highest marks across different genders")
+    plt.show()
+
